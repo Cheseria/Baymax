@@ -11,3 +11,5 @@ allows users to register their desired event and at what time they wish to be re
 allows users to create their own desired reminder for a task
 ## 5. Category:
 allows the users to generate their own catergorys in order to easily manage multiple scheduled events if desired.
+# Architecture:
+![Architecture](doc/Architecture.jpg)
