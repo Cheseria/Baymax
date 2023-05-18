@@ -12,4 +12,4 @@ allows users to create their own desired reminder for a task
 ## 5. Category:
 allows the users to generate their own catergorys in order to easily manage multiple scheduled events if desired.
 # Architecture:
-![Architecture](../src/Architecture.jpg)
+![Architecture](../src/img/Architecture.jpg)
