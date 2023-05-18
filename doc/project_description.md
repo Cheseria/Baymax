@@ -12,4 +12,6 @@ the main goal of this project is to allow users to properly organise and schedul
   ### 5. Category:
   allows the users to generate their own catergorys in order to easily manage multiple scheduled events if desired.
 # Architecture:
-![Architecture](../src/img/Architectur.jpg)
+<img src="../src/img/Architecture.jpg" alt="Architecture" width="300" height="200">
+
+
