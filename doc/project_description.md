@@ -5,10 +5,10 @@ the main goal of this project is to allow users to properly organise and schedul
   to keep track of all events scheduled utilising a date,month ,year format while also being able to generate specific events on the selected days and display the scheduled events without specificity.
   ### 2. Calendar Display :
   functions in tandem with the calender function in that it generates both daily and monthly view.
-  ### 3. Event Reminder :
+  ### 3. Event :
   allows users to register their desired event and at what time they wish to be reminded and on what day and what month.
   ### 4. Deadline Reminder :
-  allows users to create their own desired reminder for a task
+  allows users to see the upcoming events.
   ### 5. Category:
   allows the users to generate their own catergorys in order to easily manage multiple scheduled events if desired.
 # Architecture:
