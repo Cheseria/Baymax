@@ -1,16 +1,18 @@
 # Goals:
-the main goal of this project is to allow users to properly organise and schedule their day in such a way that allows them to properly navigate through the mundane tasks of everyday life.
+The main goal of this project is to allow users to properly organise and schedule their day in such a way that allows them to properly navigate through the mundane tasks of everyday life. 
 # Features :
+  To use these features you may refer to this file: [Link to Another File](../README.md)
   ### 1. Calendar :
-  to keep track of all events scheduled utilising a date,month ,year format while also being able to generate specific events on the selected days and display the scheduled events without specificity.
+  To keep track of all events scheduled utilising a date,month ,year format while also being able to generate specific events on the selected days and display the scheduled events without specificity.
   ### 2. Calendar Display :
-  functions in tandem with the calender function in that it generates both daily and monthly view.
+  Functions in tandem with the calender function in that it generates both daily and monthly view.
   ### 3. Event :
-  allows users to register their desired event and at what time they wish to be reminded and on what day and what month.
+  Allows users to register their desired event and at what time they wish to be reminded and on what day and what month.
   ### 4. Deadline Reminder :
-  allows users to see the upcoming events.
+  Allows users to see the upcoming events.
   ### 5. Category:
-  allows the users to generate their own catergorys in order to easily manage multiple scheduled events if desired.
+  Allows the users to generate their own catergorys in order to easily manage multiple scheduled events if desired.
+  
 # Architecture:
 <img src="../src/img/Architecture.jpg" alt="Architecture" width="800" height="600">
 
