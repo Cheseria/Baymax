@@ -1,7 +1,7 @@
 # Goals:
 The main goal of this project is to allow users to properly organise and schedule their day in such a way that allows them to properly navigate through the mundane tasks of everyday life. 
 # Features :
-  To use these features you may refer to this file: [Link to Another File](../README.md)
+  To use these features you may refer to this file: [HERE(../README.md)
   ### 1. Calendar :
   To keep track of all events scheduled utilising a date,month ,year format while also being able to generate specific events on the selected days and display the scheduled events without specificity.
   ### 2. Calendar Display :
