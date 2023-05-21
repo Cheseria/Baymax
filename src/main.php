@@ -1,5 +1,5 @@
 <?php
-include 'Calendar.php';
+include 'calendar.php';
 $currentdate =  date('Y-m-d');
 $calendar = new Calendar($currentdate);
 ?>
