@@ -1,0 +1,103 @@
+.calendar {
+    display: flex;
+    flex-flow: column;
+    background-color: aliceblue;
+}
+
+.calendar .header {
+    padding: 10px 0;
+    text-align: center;
+}
+
+.calendar .header .custom {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-align: center;
+    border:none;
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+    background-color: aliceblue;
+}
+
+input[type="text"]{
+    width: calc(4*15px);
+}
+
+.calendar .days {
+    display: flex;
+    flex-flow: wrap;
+    text-align: center;
+}
+.calendar .days .day_name {
+    width: calc(100% / 7);
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+    height: 50px;
+    padding: 10px;
+}
+.calendar .days .day_name:nth-child(7) {
+    border: none;
+}
+.calendar .days .day_num {
+    display: flex;
+    flex-flow: column;
+    width: calc(100% / 7);
+    padding: 10px;
+    font-weight: bold;
+    color: #7c878d;
+    cursor: pointer;
+    text-align: center;
+    padding: 3%;
+}
+
+.calendar .days .day_num span {
+    display: table;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: fit-content;
+    vertical-align: middle;
+    padding: 10px;
+    font-size: 20px;
+
+}
+.calendar .days .day_num .event {
+    margin-top: 10px;
+    font-weight: 500;
+    font-size: 14px;
+    padding: 3px 6px;
+    border-radius: 4px;
+    background-color: #f7c30d;
+    color: #fff;
+    word-wrap: break-word;
+}
+.calendar .days .day_num .event.green {
+    background-color: #51ce57;
+}
+.calendar .days .day_num .event.blue {
+    background-color: #518fce;
+}
+.calendar .days .day_num .event.red {
+    background-color: #ce5151;
+}
+
+.calendar .days .day_num:hover {
+    background-color: #fdfdfd;
+}
+.calendar .days .day_num.ignore {
+    color:  #dce4eb;
+}
+.calendar .days .day_num.selected {
+    cursor: inherit;
+    color: white;
+}
+.calendar .days .day_num.selected span{
+    background-color: red;
+    border-radius: 100%;
+   
+}
