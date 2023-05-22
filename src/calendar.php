@@ -36,11 +36,9 @@ class Calendar {
             
             // Process the selected month option
             if (!empty($selectedYear) && !empty($selectedMonth)) {
-                $this->active_month = $selectedMonth;
-                $this->active_year = $selectedYear;
-            }else{
                 $this->active_year = $selectedYear;
             }
+            echo "test: " . $this->active_month . $this->active_year; 
         }
         
         // Calendar Day Calculation
