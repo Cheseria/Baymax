@@ -59,7 +59,7 @@ class Calendar {
         $html .= '<option value="04">'. date('F', strtotime($this->active_year . '-' . 4 . '-' . $this->active_day)) .'</option>';
         $html .= '<option value="05">'. date('F', strtotime($this->active_year . '-' . 5 . '-' . $this->active_day)) .'</option>';
         $html .= '<option value="06">'. date('F', strtotime($this->active_year . '-' . 6 . '-' . $this->active_day)) .'</option>';
-        $html .= '<option value="07" <?php if ($this->active_month == '07') echo 'selected';?>'. date('F', strtotime($this->active_year . '-' . 7 . '-' . $this->active_day)) .'</option>';
+        $html .= '<option value="07" ' . ($this->active_month == '07' ? 'selected' : '') . '>' . date('F', strtotime($this->active_year . '-07-' . $this->active_day)) . '</option>';
         $html .= '<option value="08">'. date('F', strtotime($this->active_year . '-' . 8 . '-' . $this->active_day)) .'</option>';
         $html .= '<option value="09">'. date('F', strtotime($this->active_year . '-' . 9 . '-' . $this->active_day)) .'</option>';
         $html .= '<option value="10">'. date('F', strtotime($this->active_year . '-' . 10 . '-' . $this->active_day)) .'</option>';
