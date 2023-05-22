@@ -53,13 +53,13 @@ class Calendar {
         $html .= '<form method="post">';
         $html .= '<select name="dropdown" onchange="this.form.submit()" class="custom">';
         $html .= '<option value=""> '. date('F', strtotime($this->active_year . '-' . $this->active_month . '-' . $this->active_day)) .' </option>';
-        $html .= '<option value="01">'. date('F', strtotime($this->active_year . '-' . 1 . '-' . $this->active_day)) .'</option>';
+        $html .= '<option value="01" <?php if ($this->active_month == 'January') echo 'selected'>> '. date('F', strtotime($this->active_year . '-' . 1 . '-' . $this->active_day)) .'</option>';
         $html .= '<option value="02">'. date('F', strtotime($this->active_year . '-' . 2 . '-' . $this->active_day)) .'</option>';
         $html .= '<option value="03">'. date('F', strtotime($this->active_year . '-' . 3 . '-' . $this->active_day)) .'</option>';
         $html .= '<option value="04">'. date('F', strtotime($this->active_year . '-' . 4 . '-' . $this->active_day)) .'</option>';
         $html .= '<option value="05">'. date('F', strtotime($this->active_year . '-' . 5 . '-' . $this->active_day)) .'</option>';
         $html .= '<option value="06">'. date('F', strtotime($this->active_year . '-' . 6 . '-' . $this->active_day)) .'</option>';
-        $html .= '<option value="07">'. date('F', strtotime($this->active_year . '-' . 7 . '-' . $this->active_day)) .'</option>';
+        $html .= '<option value="07" <?php if ($this->active_month == '07') echo 'selected';>'. date('F', strtotime($this->active_year . '-' . 7 . '-' . $this->active_day)) .'</option>';
         $html .= '<option value="08">'. date('F', strtotime($this->active_year . '-' . 8 . '-' . $this->active_day)) .'</option>';
         $html .= '<option value="09">'. date('F', strtotime($this->active_year . '-' . 9 . '-' . $this->active_day)) .'</option>';
         $html .= '<option value="10">'. date('F', strtotime($this->active_year . '-' . 10 . '-' . $this->active_day)) .'</option>';
