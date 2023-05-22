@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Check if the username already exists
     if (isset($registeredUsers[$username])) {
-        header('Location: welcome.php');
+        header('Location: main.php');
     } else {
         // Register the user
         $registeredUsers[$username] = $password;
