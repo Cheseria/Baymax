@@ -32,12 +32,12 @@ class Calendar {
             // Process the selected month option
             if (!empty($selectedMonth)) {
                 $this->active_month = $selectedMonth;
-                $this->active_year = $selectedYear;
+                $this->active_year = $this->active_year;
             }
             
             // Process the selected month option
             if (!empty($selectedYear)) {
-                $this->active_month = $selectedMonth;
+                $this->active_month = $this->active_month;
                 $this->active_year = $selectedYear;
             }
         }
