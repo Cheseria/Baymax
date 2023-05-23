@@ -15,10 +15,10 @@ The main goal of this project is to allow users to properly organise and schedul
   Allows the users to generate their own catergorys in order to easily manage multiple scheduled events if desired.
   
 ## User Manual:
-  1. If it the first time to enter no account please register for one, if you already have an account please login (user name and password) <br>
-  2. welcome to the calendar <br>
-  3. if you want to add a event choose the date and click it, you can also delete the event <br>
-  4. add event local and time if it an assignment please add the deadline <br>
+  1. If it the first time to enter no account please register for one, if you already have an account please login (user name and password)
+  2. welcome to the calendar 
+  3. if you want to add a event choose the date and click it, you can also delete the event <
+  4. add event local and time if it an assignment please add the deadline 
   5. you want to see which event press the date then you can see it
   6. on the above of the calendar there are event for the future (three month) you can click the button and it will jump to that month 
   
