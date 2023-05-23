@@ -19,4 +19,5 @@ The main goal of this project is to allow users to properly organise and schedul
 ### Database Tables
 <img src="../src/img/Database_Tables.jpg" alt="Database_Tables" width="700" height="500">
 
-
+The picture above show the database diagram with explanation below:
+User utillises a username and password to access the system to create and schedule events as they see fit , the user would also specifcy the description of event as well as the date and time. The event will be assigned an event id by the system which will be used as a primary key by the system to access the user id when needed. The user will also be able to create a category which will have a category id which can be used to store and access multiple events within said category.
