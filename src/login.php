@@ -1,32 +1,31 @@
 <?php
+include 'config.php';
 session_start();
 
 // Check if the form is submitted
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Get the submitted username and password
-    $username = $_POST['username'];
-    $password = $_POST['password'];
+	if(isset($_POST['username'])){
+		$username = $_POST['username'];
+    	}
+    	if(isset($_POST['password'])){
+	    	$password = $_POST['password'];
+    	}
 
-    // Check if it's the first time for the user
-    if (!isset($_SESSION['registeredUsers'])) {
-        // Initialize the registered users array
-        $_SESSION['registeredUsers'] = [];
-    }
+	$sql = "SELECT * FROM User WHERE UserName='$username' AND Password='$password';";
+        $result = mysqli_query($connection, $sql);
+	$rows = mysqli_num_rows($result);
 
-    // Retrieve the registered users from the session
-    $registeredUsers = $_SESSION['registeredUsers'];
 
     // Check if the username already exists
-    if (isset($registeredUsers[$username])) {
+    if ($rows==1) {
         header('Location: main.php');
     } else {
         // Register the user
-        $registeredUsers[$username] = $password;
-        $_SESSION['registeredUsers'] = $registeredUsers;
+        echo "Username or Password invalid! Register if you haven't already";
 
         // Redirect to the login page
         header('Location: login.php');
-        exit;
     }
 }
 ?>

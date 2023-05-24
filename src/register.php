@@ -1,37 +1,46 @@
 <?php
+include 'config.php';
 session_start();
 
 // Check if the form is submitted
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Get the submitted username and password
-    $username = $_POST['username'];
-    $password = $_POST['password'];
+	if (isset($_POST['username'])) {
+		$username = $_POST['username'];
+    	}
+    	if(isset($_POST['password'])) {
+    		$password = $_POST['password'];
+    	}
+    	if ($username == '' || $password == ''){
+        	die('Name or Pass should not be empty');
+    	}
 
-    // Check if it's the first time for the user
-    if (!isset($_SESSION['registeredUsers'])) {
-        // Initialize the registered users array
-        $_SESSION['registeredUsers'] = [];
-    }
-
-    // Retrieve the registered users from the session
-    $registeredUsers = $_SESSION['registeredUsers'];
+    	$sql = "SELECT * FROM User WHERE UserName='$username';";
+	$result = mysqli_query($connection, $sql);
+	$row = mysqli_fetch_assoc($result);
 
     // Check if the username already exists
-    if (isset($registeredUsers[$username])) {
+    if ($row && $row['UserName'] == $username) {
         echo 'Username already exists. Please choose a different username.';
     } else {
         // Register the user
-        $registeredUsers[$username] = $password;
-        $_SESSION['registeredUsers'] = $registeredUsers;
+        $sql1 = "INSERT INTO User (UserName, Password) VALUES (?,?);";
 
-        // Display registration successful message
-        echo 'Registration successful.';
+	$stmt = $connection->prepare($sql1);
+	$stmt->bind_param('ss', $username, $password);
 
-        // Redirect back to the login page
-        header('Refresh: 2; URL=login.php');
-        exit;
+	$result = $stmt->execute();
+
+	if ($result) {
+    		$lastInsertedId = $connection->insert_id;
+    		echo "Registration Successful.";
+	        header('Refresh: 2; URL=login.php');
+	        exit;
+	} else {
+    		echo "Error register user.";
+	}
     }
-}
+    }
 ?>
 
 <!DOCTYPE html>
