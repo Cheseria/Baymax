@@ -1,5 +1,5 @@
 # Goals:
-This project is a single-user system that allows users to properly organise and schedule their day in such a way that allows them to properly navigate through the mundane tasks of everyday life. 
+This project is a multi-user system that allows users to properly organise and schedule their day in such a way that allows them to properly navigate through the mundane tasks of everyday life. 
 # Features :
   To install and use these features you may refer to this file: [HERE](../README.md)
   ### 1. Calendar :
