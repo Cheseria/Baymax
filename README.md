@@ -21,4 +21,8 @@ The main goal of this project is to allow users to properly organise and schedul
   4. add event local and time if it an assignment please add the deadline 
   5. you want to see which event press the date then you can see it
   6. on the above of the calendar there are event for the future (three month) you can click the button and it will jump to that month 
+
+## Installation Manual
+  1. Install XAMPP
+  2. Download the
   
