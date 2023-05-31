@@ -14,14 +14,6 @@ The main goal of this project is to allow users to properly organise and schedul
   ### 5. Category:
   Allows the users to generate their own catergorys in order to easily manage multiple scheduled events if desired.
   
-## User Manual:
-1. If it is the user's first time using the app and the user does not possess a account ,they would be prompted by a please register message , if the user ,however, already has an account the user should use his or her  login info  (user name and password) to gain access to the main calender page.
-2. The user will then be sent to the welcome to the calendar page .
-3. if the user wishes  to add an event they can choose the date they desire  and then select it, the suer will also have the option of being able to  delete the event if they so desire.
-4. The user will then be given the option to add an event location  and time if the user deems that the event is of a special nature or of special import the user can also add a  deadline
-5. If the user wishes to see the event which they have created on the calender and its details they can simply press the date and the corresponding information will be displayed for them to see
-6. Located to the top of the calender the user will be able to select an event for the future (three month) option which will enable the user to " jump forward " to that month
-
 ## Installation Manual
 1. To run this project, you must have installed a virtual server , preferably, [XAMPP](https://www.apachefriends.org/download.html) if the installation is unclear, please use this youtube video for guidance
 https://www.youtube.com/watch?v=_Rb7gbJyl8A&t=49s
@@ -32,3 +24,11 @@ https://www.youtube.com/watch?v=_Rb7gbJyl8A&t=49s
 6. Please select the browse file option and simply proceed to import the SQL file (calendar.sql) to the newly created "baymax" database
 7. Open localhost/the folder name and you will then be able to navigate and properly utilize the web application after being guided to the main page of the app.
 8. You will be able to open a browser and go to the URL http://localhost/Baymax-main/
+
+## User Manual:
+1. If it is the user's first time using the app and the user does not possess a account ,they would be prompted by a please register message , if the user ,however, already has an account the user should use his or her  login info  (user name and password) to gain access to the main calender page.
+2. The user will then be sent to the welcome to the calendar page .
+3. if the user wishes  to add an event they can choose the date they desire  and then select it, the suer will also have the option of being able to  delete the event if they so desire.
+4. The user will then be given the option to add an event location  and time if the user deems that the event is of a special nature or of special import the user can also add a  deadline
+5. If the user wishes to see the event which they have created on the calender and its details they can simply press the date and the corresponding information will be displayed for them to see
+6. Located to the top of the calender the user will be able to select an event for the future (three month) option which will enable the user to " jump forward " to that month
