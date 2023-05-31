@@ -9,7 +9,7 @@ if (!isset($_SESSION['username'])) {
     exit();
 }
 
-include 'calendar.php';
+include 'src/calendar.php';
 $currentdate =  date('Y-m-d');
 $calendar = new Calendar($currentdate);
 
