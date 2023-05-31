@@ -16,7 +16,6 @@ The main goal of this project is to allow users to properly organise and schedul
   
 ## Installation Manual
 1. To run this project, you must have installed a virtual server , preferably, [XAMPP](https://www.apachefriends.org/download.html) if the installation is unclear, please use this youtube video for guidance
-https://www.youtube.com/watch?v=_Rb7gbJyl8A&t=49s
 2. As a user you will be provided with a file that will allow you the user to properly access the web application, the provided file will then be downloaded
 3. Copy the main project folder and paste the file in xampp/htdocs in order to implement the web application
 4. Please then proceed to open your preferred browser and then go to the URL http://localhost/phpmyadmin/
