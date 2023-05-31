@@ -5,9 +5,15 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
+
+.head{
+    align-items: center;
+    display: flex;
+}
 body {
-    background:aliceblue;
+    background: aliceblue;
     margin:auto;
+    display: table-cell;
 }
 .navtop {
     background-color: #3b4656;
@@ -48,6 +54,7 @@ body {
 .content {
     margin: 100px;
     margin-top: 50px;
+    display: flex;
 }
 
 .content h2 {

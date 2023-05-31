@@ -13,6 +13,7 @@ class Calendar {
         $this->active_day = $date != null ? date('d', strtotime($date)) : date('d');
     }
 
+    //query events from database
     public function get_events_from_databases(){
         global $connection;
 
@@ -27,17 +28,18 @@ class Calendar {
                 $CategoryID = $row['CategoryID'];
 
                 // Add the event to the calendar
-                $this->add_event('', $EventDate, 1, $CategoryId);
+                $this->add_event('', $EventDate, 1, $CategoryId, );
             }
         }
     }
-
+    //add the events to be generated in the calendar 
     public function add_event($txt, $date, $days = 1, $CategoryID) {
         $this->events[] = [$txt, $date, $days, $CategoryID];
     }
 
     // Create Calendar
     public function __toString() {
+        global $connection;
         $currentdate = date("Y-m-d"); //Innitiate current date as default
         $this->current_year = $currentdate != null ? date('Y', strtotime($currentdate)) : date('Y'); // Year
         $this->current_month = $currentdate != null ? date('m', strtotime($currentdate)) : date('m'); // Month
@@ -71,7 +73,7 @@ class Calendar {
         $html .= '<div class = "container">';
         // Month Selection Option
         $html .= '<form method="POST">';
-        $html .= '<select name="dropdown" onchange="this.form.submit()" class="custom">';
+        $html .= '<select name="dropdown" onchange="this.form.submit()" class="custom" >';
         $html .= '<option value=""> '. date('F', strtotime($this->active_year . '-' . $this->active_month . '-' . $this->active_day)) .' </option>';
         $html .= '<option value="01" ' . ($this->active_month == '01' ? 'selected' : '') . '> '. date('F', strtotime($this->active_year . '-' . 1 . '-' . $this->active_day)) .'</option>';
         $html .= '<option value="02" ' . ($this->active_month == '02' ? 'selected' : '') . '> '. date('F', strtotime($this->active_year . '-' . 2 . '-' . $this->active_day)) .'</option>';
@@ -90,21 +92,30 @@ class Calendar {
         $html .= '</form>';
         $html .= '</div>';
 
-        $html .= '<div class = plan>';
-        foreach ($this->events as $event) {
-            for ($d = 0; $d <= ($event[2]-1); $d++) {
-                if (date('y-m', strtotime($this->active_year . '-' . $this->active_month)) == date('y-m', strtotime($event[1]))) {
-                    $html .= '<div class="event category-' . $event[3] . '">';
-                    $html .= $event[0] . " " . date('d', strtotime($event[1]));
-                    $html .= '</div>';
-                }  
-            }
-        }  
+        //list the events that occur on spesific date
+        $html .= '<div class="events-container" id="event-list">';
         $html .= '</div>';
+
+        //list all the categories
+        //query the categories
+        $categoryQuery = "SELECT * FROM category";
+        $categoryResult = $connection->query($categoryQuery);
+
+        if ($categoryResult && mysqli_num_rows($categoryResult) > 0) {
+            while ($row = mysqli_fetch_assoc($categoryResult)) {
+              $categoryName = $row['CategoryName'];
+              $categoryId = $row['CategoryID'];
+              $html .= '<div class="element">';
+              $html .= " $categoryName ";
+              $html .= '<div class="dots category-' . $categoryId . '">';
+              $html .= '</div>';
+              $html .= '</div>';
+            }
+        }
+
         $html .= '</div>';
 
         $html .= '<div class="days">';
-
         foreach ($days as $day) {
             $html .= '
                 <div class="day_name">
@@ -127,7 +138,7 @@ class Calendar {
             
             $html .= '<div class="day_num' . $selected . '">';
             $html .= '<span>' . $i . '</span>';
-
+           
             foreach ($this->events as $event) {
                 for ($d = 0; $d <= ($event[2]-1); $d++) {
                     if (date('y-m-d', strtotime($this->active_year . '-' . $this->active_month . '-' . $i . ' -' . $d . ' day')) == date('y-m-d', strtotime($event[1]))) {

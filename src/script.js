@@ -98,3 +98,35 @@ forms.forEach(function(form) {
     });
 });
 
+
+// Assuming you have an array of date elements with class "day_num"
+var dateElements = document.querySelectorAll('.day_num');
+
+// Get the month dropdown and year input field
+var monthDropdown = document.querySelector('select[name="dropdown"]');
+var yearInput = document.querySelector('input[name="year"]');
+
+// Attach click event handler to each date element
+dateElements.forEach(function(dateElement) {
+  dateElement.addEventListener('click', function() {
+    var selectedDate = this.textContent.trim(); // Get the selected date value
+    var selectedMonth = monthDropdown.value; // Get the selected month value from the dropdown
+    var selectedYear = yearInput.value; // Get the selected year value from the input field
+
+    var selectedDateFull = selectedYear + '-' + selectedMonth + '-' + selectedDate; // Combine date, month, and year
+
+    // Make an AJAX request to fetch the events for the selected month, year, and date
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', 'src/get_events.php?selected_date=' + selectedDateFull, true); // Replace with the actual endpoint to fetch events
+    xhr.onload = function() {
+      if (xhr.status >= 200 && xhr.status < 400) {
+        // Update the content of the event list element in the header
+        document.getElementById('event-list').innerHTML = xhr.responseText;
+      }
+    };
+    xhr.send();
+  });
+});
+
+
+

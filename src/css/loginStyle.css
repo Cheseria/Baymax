@@ -1,0 +1,104 @@
+body {
+
+    background-image: url("../img/wallpaper.jpg");
+    background-size: cover;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    height: 100vh;
+
+    flex-direction: column;
+
+}
+
+*{/*username, password, login word*/
+
+    font-family: cursive;
+
+    box-sizing: padding-box;
+
+    font-size: 18px;
+}
+
+form {/*big login square back one*/
+
+    width: 500px;
+
+    padding: 20px;
+
+    background: #D8EDDA;
+
+    border-radius: 20px;
+
+}
+
+h2 {/*login under welcome*/
+
+    text-align: center;
+
+    margin-bottom: 30px;
+
+    font-size: 45px;
+
+    font-family: monospace;
+}
+
+input {
+
+    display: block;
+
+    border: 2px solid #ccc;
+
+    width: 85%;
+
+    padding: 10px;
+
+    margin: 10px auto;
+
+    border-radius: 5px;
+
+}
+
+h3 {
+
+    text-align: center;
+
+    color: #0E305D;
+
+    font-size: 60px;
+
+    font-family: monospace;
+
+    margin-bottom: 20px;
+}
+
+
+a {/*register bar*/
+
+    float: right;
+
+    background: #E9D55F;
+
+    padding: 10px 15px;
+
+    color: #000000;
+
+    border-radius: 10px;
+
+    margin-right: 10px;
+
+    border: none;
+
+    text-decoration: none;
+
+}
+
+a:hover{
+
+    opacity: .7;
+
+}

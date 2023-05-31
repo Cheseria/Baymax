@@ -31,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         
         foreach ($categories as $category) {
             $CategoryID = $category['CategoryID'];
-            $colorCode = '#' . substr(md5(rand()), 0, 6);
+            $colorCode = '#' . dechex(random_int(0, 16777215));
         
             // Output the dynamic CSS rule for the category
             echo ".category-$CategoryID { background-color: $colorCode; } \n";
@@ -40,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $cssContent = ob_get_clean();
         
         // Write the dynamic CSS styles to a file
-        $file = fopen('dynamic_styles.css', 'w');
+        $file = fopen('css/dynamic_styles.css', 'w');
         fwrite($file, $cssContent);
         fclose($file);
 }

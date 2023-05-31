@@ -21,7 +21,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $CategoryName = $_POST['CategoryName'];
     }
 
-
     // Prepare the query to get the categoryId based on the category name
     $sql = "SELECT CategoryId FROM category WHERE CategoryName = ?";
     $stmt = $connection->prepare($sql);
@@ -52,51 +51,3 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 ?>
-
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Register</title>
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-
-        .register-form {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .register-heading {
-            margin-bottom: 10px;
-        }
-
-        .input-field {
-            margin-bottom: 10px;
-        }
-    </style>
-</head>
-<body>
-    <div class="register-form">
-        <h2 class="register-heading">Register</h2>
-        <form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-            <label> Date: "2023-05-27" </label>
-            <input type="hidden" name="EventDate" value="2023-05-27">
-            <label>Event Name:</label>'
-            <input type="text" name="EventName">
-            <label>Event Description:</label>
-            <input type="text" name="EventDesc">
-            <label>Time:</label>
-            <input type="text" name="EventTime">
-            <label>Category:</label>
-            <input type="text" name="CategoryName">
-            <input type="submit" value="Add Event">
-        </form>
-    </div>
-</body>
-</html>
-

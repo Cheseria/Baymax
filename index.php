@@ -39,7 +39,7 @@ if ($rows > 0) {
 		<title>Event Calendar</title>
 		<link href="src/css/style.css" rel="stylesheet" type="text/css">
 		<link href="src/css/calendar.css" rel="stylesheet" type="text/css">
-		<link href="src/css/dynamic_styles.css" rel="stylesheet" type="text/css">
+		<link href="src/dynamic_styles.css" rel="stylesheet" type="text/css">
 		
 	</head>
 	<body> 
@@ -53,7 +53,7 @@ if ($rows > 0) {
 			<div><?=$calendar?></div>
 		</div>
 
-		<script src="script.js"></script>
+		<script src="src/script.js"></script>
 	</body>
 	
 	
