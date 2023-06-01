@@ -40,3 +40,8 @@ The main goal of this project is to allow users to properly organise and schedul
 4. The user will then be given the option to add an event location  and time if the user deems that the event is of a special nature or of special import the user can also add a  deadline
 5. If the user wishes to see the event which they have created on the calender and its details they can simply press the date and the corresponding information will be displayed for them to see
 6. Located to the top of the calender the user will be able to select an event for the future (three month) option which will enable the user to " jump forward " to that month
+
+* npm
+  ```sh
+  npm install npm@latest -g
+  ```
