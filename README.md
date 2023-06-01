@@ -29,7 +29,7 @@ The main goal of this project is to allow users to properly organise and schedul
 4. Open your browser, and typed in http://localhost/phpmyadmin/
 5. On the left sidebar, click on New.
 6. Create the Database by filling the name under Create database form with baymax and click create
-7. It will refer you to the content of newly created database as shown below <img src="/src/img/Database.png" alt="If the display is not the same, you can click on "baymax" on the left sidebar and it should refer you to the same display" >
+7. It will refer you to the content of newly created database as shown below <img src="/src/img/Database.png" alt="If the display is not the same, you can click on 'baymax' on the left sidebar and it should refer you to the same display" >
 8. Select the Import option above, select the Choose File and select the calendar.sql of the project (C:/xampp/htdocs/Baymax-main/src/calendar.sql). Scroll down and click on the import button.
 9. <img src="/src/img/Success.png" alt="If Imported Successfully, it should look like this">
 10. Now, you can run the project on the browser by typing in http://localhost/Baymax-main/
