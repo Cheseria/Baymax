@@ -24,7 +24,7 @@ The main goal of this project is to allow users to properly organise and schedul
 5. You may tick the box if you want to start the control panel right away.
 #### Running The Project
 1. Download The Project by clicking the code above, and select download zip
-<img src="../src/img/Download.png" alt="Download" width="800" height="500">
+<img src="../src/img/Download.png" alt="Download">
 2. Extract the zip files to htdocs folder inside XAMPP Folder (C:/xampp/htdocs/)
 3. To Access the project on the Browser, you need to start the services for both the Web Server and Database by Clicking the start button for both Apache and MySQL modules. (If both modules has the green color as the background or the start button has changed into stop it means it already started)
 4. Open your browser, and typed in
@@ -38,9 +38,9 @@ The main goal of this project is to allow users to properly organise and schedul
   ```
   and click create
 7. It will refer you to the content of newly created database as shown below
-<img src="../src/img/Database.png" alt="If the display is not the same, you can click on "baymax" on the left sidebar and it should refer you to the same display" width="800" height="500">
+<img src="../src/img/Database.png" alt="If the display is not the same, you can click on "baymax" on the left sidebar and it should refer you to the same display" >
 8. Select the Import option above, select the Choose File and select the calendar.sql of the project (C:/xampp/htdocs/Baymax-main/src/calendar.sql). Scroll down and click on the import button.
-10. <img src="../src/img/Success.png" alt="If Imported Successfully, it should look like this" on the left sidebar and it should refer you to the same display" width="800" height="500">
+10. <img src="../src/img/Success.png" alt="If Imported Successfully, it should look like this">
 11. Now, you can run the project on the browser by typing in
   ```sh
   localhost/Baymax-main/
