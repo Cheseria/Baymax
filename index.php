@@ -37,9 +37,10 @@ if ($rows > 0) {
 	<head>
 		<meta charset="utf-8">
 		<title>Event Calendar</title>
+		<link href="src/css/dynamic_styles.css" rel="stylesheet" type="text/css">
 		<link href="src/css/style.css" rel="stylesheet" type="text/css">
 		<link href="src/css/calendar.css" rel="stylesheet" type="text/css">
-		<link href="src/css/dynamic_styles.css" rel="stylesheet" type="text/css">
+		
 		
 	</head>
 	<body> 
