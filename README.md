@@ -15,14 +15,23 @@ The main goal of this project is to allow users to properly organise and schedul
   Allows the users to generate their own catergorys in order to easily manage multiple scheduled events if desired.
   
 ## Installation Manual
-1. To run this project, you must have installed a virtual server , preferably, [XAMPP](https://www.apachefriends.org/download.html)
-2. As a user you will be provided with a file that will allow you the user to properly access the web application, the provided file will then be downloaded
-3. Copy the main project folder and paste the file in xampp/htdocs in order to implement the web application
-4. Please then proceed to open your preferred browser and then go to the URL http://localhost/phpmyadmin/
-5. As a user please  select the database option, create a database called "baymax" and then please select an import tab.
-6. Please select the browse file option and simply proceed to import the SQL file (calendar.sql) to the newly created "baymax" database
-7. Open localhost/the folder name and you will then be able to navigate and properly utilize the web application after being guided to the main page of the app.
-8. You will be able to open a browser and go to the URL http://localhost/Baymax-main/
+### To run this project, you must have installed a virtual server, mySQL for the database, and the project itself.
+#### Virtual Server & Database Installation On Windows
+1. Download & Install [XAMPP](https://www.apachefriends.org/download.html)
+2. Click the word "XAMPP" above, it will direct you to the download page of XAMPP.
+3. Find "XAMPP for Windows" and choose the version you want to download.
+4. After the download is finished, just follow the installation manual inside the setup and wait until it's completed.
+5. You may tick the box if you want to start the control panel right away.
+
+#### Virtual Server & Database Installation On Linux
+1. 
+ 
+6. Copy the main project folder and paste the file in xampp/htdocs in order to implement the web application
+7. Please then proceed to open your preferred browser and then go to the URL http://localhost/phpmyadmin/
+8. As a user please  select the database option, create a database called "baymax" and then please select an import tab.
+9. Please select the browse file option and simply proceed to import the SQL file (calendar.sql) to the newly created "baymax" database
+10. Open localhost/the folder name and you will then be able to navigate and properly utilize the web application after being guided to the main page of the app.
+11. You will be able to open a browser and go to the URL http://localhost/Baymax-main/
 
 ## User Manual:
 1. If it is the user's first time using the app and the user does not possess a account ,they would be prompted by a please register message , if the user ,however, already has an account the user should use his or her  login info  (user name and password) to gain access to the main calender page.
