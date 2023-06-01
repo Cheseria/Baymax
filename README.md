@@ -15,15 +15,37 @@ The main goal of this project is to allow users to properly organise and schedul
   Allows the users to generate their own catergorys in order to easily manage multiple scheduled events if desired.
   
 ## Installation Manual
-### To run this project, you must have installed a virtual server, mySQL for the database, and the project itself.
-#### Virtual Server & Database Installation On Windows
+### To run this project, you must have installed a Web server, MySQL for the database, and the project itself.
+#### Web Server & Database Installation On Windows
 1. Download & Install [XAMPP](https://www.apachefriends.org/download.html)
 2. Click the word "XAMPP" above, it will direct you to the download page of XAMPP.
 3. Find "XAMPP for Windows" and choose the version you want to download.
 4. After the download is finished, just follow the installation manual inside the setup and wait until it's completed.
 5. You may tick the box if you want to start the control panel right away.
 #### Running The Project
-1. Download The Project by clicking the code above, and select download as a zip
+1. Download The Project by clicking the code above, and select download zip
+<img src="../src/img/Download.png" alt="Download" width="800" height="500">
+2. Extract the zip files to htdocs folder inside XAMPP Folder (C:/xampp/htdocs/)
+3. To Access the project on the Browser, you need to start the services for both the Web Server and Database by Clicking the start button for both Apache and MySQL modules. (If both modules has the green color as the background or the start button has changed into stop it means it already started)
+4. Open your browser, and typed in
+  ```sh
+  localhost/phpmyadmin/
+  ```
+5. On the left sidebar, click on New.
+6. Create the Database by filling the name under Create database form with
+  ```sh
+  baymax
+  ```
+  and click create
+7. It will refer you to the content of newly created database as shown below
+<img src="../src/img/Database.png" alt="If the display is not the same, you can click on "baymax" on the left sidebar and it should refer you to the same display" width="800" height="500">
+8. Select the Import option above, select the Choose File and select the calendar.sql of the project (C:/xampp/htdocs/Baymax-main/src/calendar.sql). Scroll down and click on the import button.
+10. <img src="../src/img/Success.png" alt="If Imported Successfully, it should look like this" on the left sidebar and it should refer you to the same display" width="800" height="500">
+11. Now, you can run the project on the browser by typing in
+  ```sh
+  localhost/Baymax-main/
+  ```
+12. You should directed to the login.php
 #### Virtual Server & Database Installation On Linux
 1. 
  
@@ -42,7 +64,6 @@ The main goal of this project is to allow users to properly organise and schedul
 5. If the user wishes to see the event which they have created on the calender and its details they can simply press the date and the corresponding information will be displayed for them to see
 6. Located to the top of the calender the user will be able to select an event for the future (three month) option which will enable the user to " jump forward " to that month
 
-* npm
   ```sh
   npm install npm@latest -g
   ```
