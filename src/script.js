@@ -159,9 +159,6 @@ document.addEventListener('click', function(event) {
         // Event deleted successfully, remove it from the DOM
         var eventElement = event.target.closest('.eventElement');
         eventElement.remove();
-
-        // Refresh the page
-        location.reload();
       } else {
         // Error occurred, handle accordingly
         console.log('Failed to delete the event.');

@@ -175,8 +175,7 @@ background-color: #cc0000;
 }
 .calendar .days .day_num.selected span{
     background-color: lightskyblue;
-    border-radius: 100%;
-   
+    border-radius: 100%;  
 }
 
 
