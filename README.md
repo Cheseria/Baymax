@@ -22,7 +22,8 @@ The main goal of this project is to allow users to properly organise and schedul
 3. Find "XAMPP for Windows" and choose the version you want to download.
 4. After the download is finished, just follow the installation manual inside the setup and wait until it's completed.
 5. You may tick the box if you want to start the control panel right away.
-
+#### Running The Project
+1. Download The Project by clicking the code above, and select download as a zip
 #### Virtual Server & Database Installation On Linux
 1. 
  
