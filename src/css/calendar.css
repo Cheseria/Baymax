@@ -174,7 +174,7 @@ background-color: #cc0000;
     color: white;
 }
 .calendar .days .day_num.selected span{
-    background-color: red;
+    background-color: lightskyblue;
     border-radius: 100%;
    
 }
@@ -248,11 +248,17 @@ background-color: #cc0000;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 300px;
+    width: 200px;
     padding: 20px;
     background-color: #fff;
     border: 1px solid #ccc;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     z-index: 9999;
+}
+
+.pop-up-form-category input{
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
 }
