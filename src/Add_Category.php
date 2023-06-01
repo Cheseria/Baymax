@@ -5,8 +5,8 @@ session_start();
 // Check if the form is submitted
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Get the submitted username and password
-        if (isset($_POST['Category'])) {
-                $Category = $_POST['Category'];
+        if (isset($_POST['CategoryName'])) {
+                $Category = $_POST['CategoryName'];
         }
 
         $sql1 = "INSERT INTO Category (CategoryName) VALUES (?);";
@@ -45,44 +45,3 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         fclose($file);
 }
 ?>
-
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Register</title>
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-
-        .register-form {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .register-heading {
-            margin-bottom: 10px;
-        }
-
-        .input-field {
-            margin-bottom: 10px;
-        }
-    </style>
-</head>
-<body>
-    <div class="register-form">
-        <h2 class="register-heading">Register</h2>
-        <form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-            <label for="Category">Category:</label>
-            <input type="text" name="Category" required class="input-field"><br>
-
-            <input type="submit" value="Submit">
-        </form>
-    </div>
-</body>
-</html>
-

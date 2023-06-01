@@ -4,7 +4,7 @@ include "config.php";
 class Calendar {
 
     private $active_year, $active_month, $active_day;
-    private $events = [];
+    private $events = []; // Initialize Event Variable
 
     // Build innitial Calendar
     public function __construct($date = null) {
@@ -13,7 +13,7 @@ class Calendar {
         $this->active_day = $date != null ? date('d', strtotime($date)) : date('d');
     }
 
-    //query events from database
+    // Query Events From Database
     public function get_events_from_databases(){
         global $connection;
 
@@ -22,17 +22,17 @@ class Calendar {
         $rows = mysqli_num_rows($result);
 
         if ($rows > 0) {
-            // Loop through the rows and add the events to the calendar
+            // Loop Through The Rows and Add The Events to The Calendar
             while ($row = $result->fetch_assoc()) {
                 $EventDate = $row['EventDate'];
                 $CategoryID = $row['CategoryID'];
 
-                // Add the event to the calendar
+                // Add The Event to The Calendar
                 $this->add_event('', $EventDate, 1, $CategoryId, );
             }
         }
     }
-    //add the events to be generated in the calendar 
+    // Add The Events to be Generated in The Calendar 
     public function add_event($txt, $date, $days = 1, $CategoryID) {
         $this->events[] = [$txt, $date, $days, $CategoryID];
     }
@@ -92,15 +92,17 @@ class Calendar {
         $html .= '</form>';
         $html .= '</div>';
 
-        //list the events that occur on spesific date
+        // List The Events That Occur On Spesific Date
         $html .= '<div class="events-container" id="event-list">';
         $html .= '</div>';
 
-        //list all the categories
-        //query the categories
+        $html .= '<div class="categories-container">';
+        // Query the Categories
         $categoryQuery = "SELECT * FROM category";
         $categoryResult = $connection->query($categoryQuery);
+        $html .= 'Category';
 
+        // Show All Saved Category
         if ($categoryResult && mysqli_num_rows($categoryResult) > 0) {
             while ($row = mysqli_fetch_assoc($categoryResult)) {
               $categoryName = $row['CategoryName'];
@@ -108,13 +110,24 @@ class Calendar {
               $html .= '<div class="element">';
               $html .= " $categoryName ";
               $html .= '<div class="dots category-' . $categoryId . '">';
+              $html .= '<button class="delete-category" data-category-id="' . $categoryId . '">Delete</button>';
               $html .= '</div>';
               $html .= '</div>';
             }
         }
-
+        $html .= '<button id="add-category-button">+</button>';
+        $html .= '</div>';
         $html .= '</div>';
 
+        $html .= '<div class="pop-up-overlay-category"></div>';
+        $html .= '<div class="pop-up-form-category" id="popUpFormCategory">';
+        $html .= '<form>';
+        $html .= '<label>Category Name:</label>';
+        $html .= '<input type="text" name="CategoryName">';
+        $html .= '</form>';
+        $html .= '</div>';
+
+        // Display Days' name
         $html .= '<div class="days">';
         foreach ($days as $day) {
             $html .= '
@@ -123,6 +136,7 @@ class Calendar {
                 </div>
             ';
         }
+        // Show Dates from The Previous Month
         for ($i = $first_day_of_week; $i > 0; $i--) {
             $html .= '
                 <div class="day_num ignore">
@@ -130,15 +144,18 @@ class Calendar {
                 </div>
             ';
         }
+        // Show the Dates for The Current/Selected Month
         for ($i = 1; $i <= $num_days; $i++) {
-            $selected = '';
+            $selected = ''; // Initialize Selected Date Variable
+            // Check Whether There is Today's Date on The Calendar or Not
             if ($i == date("d") && $this->current_year == $this->active_year && $this->current_month == $this->active_month ) {
                 $selected = ' selected';
             }
             
             $html .= '<div class="day_num' . $selected . '">';
             $html .= '<span>' . $i . '</span>';
-           
+            
+            // Show Events on The Date If There's Any
             foreach ($this->events as $event) {
                 for ($d = 0; $d <= ($event[2]-1); $d++) {
                     if (date('y-m-d', strtotime($this->active_year . '-' . $this->active_month . '-' . $i . ' -' . $d . ' day')) == date('y-m-d', strtotime($event[1]))) {
@@ -147,7 +164,9 @@ class Calendar {
                         $html .= '</div>';
                     }  
                 }
-            }    
+            } 
+
+            // Adding Event Function
             $html .= '</div>';          
             $html .= '<div class="pop-up-overlay"></div>';
             $html .= '<div class="pop-up-form" id="popUpForm' . $i . '">';
@@ -166,7 +185,8 @@ class Calendar {
             $html .= '</form>';
             $html .= '</div>';
                 }
-
+        
+        // Show The Remaining Date From Next Month to Fill The Empty Slot
         for ($i = 1; $i <= (35-$num_days-max($first_day_of_week, 0)); $i++) {
             $html .= '
                 <div class="day_num ignore">

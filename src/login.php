@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $UserID = $row['UserID'];
         $_SESSION['UserID'] = $UserID;
         
-        header('Location: index.php');
+        header('Location: ../index.php');
         exit;
     } else {
         // Register the user

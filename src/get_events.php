@@ -10,14 +10,29 @@ $result = mysqli_query($connection, $query);
 
 $html = ''; // Initialize the $html variable
 
+$html .= $selectedDate;
 // Check if there are any events
 if ($result && mysqli_num_rows($result) > 0) {
     while ($row = mysqli_fetch_assoc($result)) {
       $eventName = $row['EventName'];
       $categoryId = $row['CategoryID'];
-      $html .= '<div class="element">';
+      $eventDescription = $row['EventDescription'];
+      $eventTime = $row['EventTime'];
+      $eventDate = $row['EventDate'];
+      $eventId = $row['EventID'];
+
+      $html .= '<div class="eventElement">';
+      $html .= '<div class="eventHeader">';
       $html .= " $eventName ";
-      $html .= '<div class="dots category-' . $categoryId . '">';
+      $html .= '<div class="dots category-' . $categoryId . '"> </div>';
+      $html .= '</div>';
+      $html .= '<div class="event-description-container">';
+      $html .= '<div class="element">Date: ' . $eventDate . '</div>';
+      $html .= '<div class="element">Time: ' . $eventTime . '</div>';
+      $html .= '<div class="element">Desc: ' . $eventDescription . '</div>';
+      $html .= '<button class="delete-button" data-event-id="' . $eventId . '">Delete</button>'; // Add the delete button
+      $html .= '</div>';
+      $html .= '</div>';
       $html .= '</div>';
       $html .= '</div>';
     }
