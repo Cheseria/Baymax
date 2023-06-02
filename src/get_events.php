@@ -10,10 +10,10 @@ $result = mysqli_query($connection, $query);
 
 $html = ''; // Initialize the $html variable
 
-$html .= $selectedDate;
 // Check if there are any events
 if ($result && mysqli_num_rows($result) > 0) {
     while ($row = mysqli_fetch_assoc($result)) {
+      $eventDate = $row['EventDate'];
       $eventName = $row['EventName'];
       $categoryId = $row['CategoryID'];
       $eventDescription = $row['EventDescription'];
@@ -21,6 +21,7 @@ if ($result && mysqli_num_rows($result) > 0) {
       $eventDate = $row['EventDate'];
       $eventId = $row['EventID'];
 
+      $html .= $eventDate;
       $html .= '<div class="eventElement">';
       $html .= '<div class="eventHeader">';
       $html .= " $eventName ";
@@ -37,7 +38,9 @@ if ($result && mysqli_num_rows($result) > 0) {
       $html .= '</div>';
     }
   } else {
+    $html .= $selectedDate;
     $html .= '<p>No Events</p>';
+
   }
 // Return the HTML response
 echo $html;
