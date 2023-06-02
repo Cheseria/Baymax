@@ -21,3 +21,6 @@ CREATE TABLE Event(
 CONSTRAINT Event_FK1 FOREIGN KEY (UserID) REFERENCES User(UserID),
 CONSTRAINT Event_FK2 FOREIGN KEY (CategoryID) REFERENCES Category(CategoryID)
 );
+
+INSERT INTO Category VALUES (1, 'Assignment');
+INSERT INTO Category VALUES (2, 'Quiz');
