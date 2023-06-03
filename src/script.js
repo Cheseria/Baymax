@@ -182,16 +182,18 @@ document.addEventListener('click', function(event) {
 // Show Delete Button for Each Category
 document.addEventListener('click', function(event) {
   if (event.target.matches('.element')) {
-    // Toggle the visibility of the Category description
-    var deleteCategory = event.target.parentNode.querySelector('.delete-category');
-    // Check whether the display is set to none, if not then make it none
-    if (deleteCategory.style.display === 'none' || deleteCategory.style.display === '') {
-      deleteCategory.style.display = 'block';
+    // Toggle the visibility of the delete button within the clicked category element
+    var categoryElement = event.target;
+    var deleteButton = categoryElement.querySelector('.delete-category');
+    
+    if (deleteButton.style.display === 'none' || deleteButton.style.display === '') {
+      deleteButton.style.display = 'block';
     } else {
-      deleteCategory.style.display = 'none';
+      deleteButton.style.display = 'none';
     }
   }
 });
+
 
 document.addEventListener('click', function(event) {
   if (event.target.matches('.delete-category')) {
