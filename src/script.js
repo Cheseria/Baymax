@@ -193,43 +193,48 @@ document.addEventListener('click', function(event) {
   }
 });
 
-// Delete Category Script/Logic
 document.addEventListener('click', function(event) {
   if (event.target.matches('.delete-category')) {
-    // Get the event ID from the data attribute
+    // Get the category ID from the data attribute
     var categoryId = event.target.getAttribute('data-category-id');
     
-    // Create a new XMLHttpRequest object
-    var xhr = new XMLHttpRequest();
+    // Show a confirmation dialog before deleting
+    var confirmed = window.confirm('Are you sure you want to delete this category and all its related events?');
     
-    // Set up the request
-    xhr.open('GET', 'src/delete_category.php?category_id=' + categoryId);
-    
-    // Define the callback function for when the request completes
-    xhr.onload = function() {
-      if (xhr.status === 200) {
-        // Event deleted successfully, remove it from the DOM
-        var element = event.target.closest('.element');
-        element.remove();
-        
-        // Refresh the page
-        location.reload();
-      } else {
+    if (confirmed) {
+      // Create a new XMLHttpRequest object
+      var xhr = new XMLHttpRequest();
+      
+      // Set up the request
+      xhr.open('GET', 'src/delete_category.php?category_id=' + categoryId);
+      
+      // Define the callback function for when the request completes
+      xhr.onload = function() {
+        if (xhr.status === 200) {
+          // Event deleted successfully, remove it from the DOM
+          var element = event.target.closest('.element');
+          element.remove();
+          
+          // Refresh the page
+          location.reload();
+        } else {
+          // Error occurred, handle accordingly
+          console.log('Failed to delete the category.');
+        }
+      };
+      
+      // Define the callback function for when an error occurs
+      xhr.onerror = function() {
         // Error occurred, handle accordingly
-        console.log('Failed to delete the category.');
-      }
-    };
-    
-    // Define the callback function for when an error occurs
-    xhr.onerror = function() {
-      // Error occurred, handle accordingly
-      console.log('An error occurred while deleting the event.');
-    };
-    
-    // Send the request
-    xhr.send();
+        console.log('An error occurred while deleting the category.');
+      };
+      
+      // Send the request
+      xhr.send();
+    }
   }
 });
+
 
 // Add Category Script
 // Add event listener to the "+" button

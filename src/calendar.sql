@@ -19,7 +19,7 @@ CREATE TABLE Event(
             UserID              INT             NOT NULL,
             CategoryID          INT             NOT NULL,
 CONSTRAINT Event_FK1 FOREIGN KEY (UserID) REFERENCES User(UserID),
-CONSTRAINT Event_FK2 FOREIGN KEY (CategoryID) REFERENCES Category(CategoryID)
+CONSTRAINT Event_FK2 FOREIGN KEY (CategoryID) REFERENCES Category(CategoryID) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 INSERT INTO Category VALUES (1, 'Assignment');
