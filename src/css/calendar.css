@@ -85,6 +85,41 @@ input[type="text"]{
     padding: 0 20%;
 }
 
+.add-button {
+	width: 25px;
+	height: 25px;
+	cursor: pointer;
+	background-color: #5de6de;
+	background-image: linear-gradient(315deg, #5de6de 0%, #c38ecc 74%);
+	border: none;
+	border-radius: 50%;
+	transition: 200ms;
+    margin: 10px;
+    display: inline-grid;
+}
+
+.add-button:before {
+	position: absolute;
+	transform: translateX(-50%) translateY(45px);
+	font-size: 15px;
+	transition: 200ms;
+	color: transparent;
+	font-weight: bold;
+}
+
+.add-button:hover {
+	box-shadow: 0 1px 5px rgba(0,0,0,0.2);
+	width: 35px;
+	height: 35px;
+    font-size: 150%;
+    display: inline-grid;
+    color: #fff;
+}
+
+.add-button:hover::before {
+	color: #fff;
+}
+
 .calendar .header .delete-category{
     display:none;
     background-color: #ff0000;
