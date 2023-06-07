@@ -26,14 +26,15 @@ The main goal of this project is to allow users to properly organise and schedul
 1. Download The Project by clicking the code above, and select download zip <img src="/src/img/Download.png" alt="Download">
 2. Extract the zip files and copy the main project folder (Baymax-main: parent folder to src, doc, index.php README.md) to htdocs folder inside XAMPP Folder (C:/xampp/htdocs/)
 3. To Access the project on the Browser, you need to start the services for both the Web Server and Database by Open XAMPP Control Panel and Click the start button for both Apache and MySQL modules. <br> (If both modules has the green color as the background or the start button has changed into stop, it means it already started)
-4. Open your browser, and typed in http://localhost/phpmyadmin/
-5. On the left sidebar, click on New.
-6. Create the Database by filling the name under Create database form with baymax and click create
-7. It will refer you to the content of newly created database as shown below <img src="/src/img/Database.png" alt="If the display is not the same, you can click on 'baymax' on the left sidebar and it should refer you to the same display" >
-8. Select the Import option above, select the Choose File and select the calendar.sql of the project (C:/xampp/htdocs/Baymax-main/src/calendar.sql). Scroll down and click on the import button.
-9. <img src="/src/img/Success.png" alt="If Imported Successfully, it should look like this">
-10. Now, you can run the project on the browser by typing in http://localhost/Baymax-main/
-11. You should directed to the login.php
+4. If you have previously created the database called baymax, you can skip no 5-10.
+5. Open your browser, and typed in http://localhost/phpmyadmin/
+6. On the left sidebar, click on New.
+7. Create the Database by filling the name under Create database form with baymax and click create
+8. It will refer you to the content of newly created database as shown below <img src="/src/img/Database.png" alt="If the display is not the same, you can click on 'baymax' on the left sidebar and it should refer you to the same display" >
+9. Select the Import option above, select the Choose File and select the calendar.sql of the project (C:/xampp/htdocs/Baymax-main/src/calendar.sql). Scroll down and click on the import button.
+10. <img src="/src/img/Success.png" alt="If Imported Successfully, it should look like this">
+11. Now, you can run the project on the browser by typing in http://localhost/Baymax-main/
+12. You should directed to the login.php
 
 ## User Manual:
 1. If it is the user's first time using the app and the user does not possess an account, they would be prompted by "Username or Password invalid! Register if you haven't already" message , if the user ,however, already has an account the user should use his or her login info (username and password) to gain access to the main calendar page.
