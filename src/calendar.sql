@@ -7,7 +7,9 @@ CREATE TABLE User (
 
 CREATE TABLE Category(
             CategoryID      INT AUTO_INCREMENT PRIMARY KEY,
-            CategoryName    VARCHAR(100)   NOT NULL
+            CategoryName    VARCHAR(100)   NOT NULL,
+            UserID          INT            NOT NULL,
+CONSTRAINT Category_FK1 FOREIGN KEY (UserID) REFERENCES User(UserID)
 );
 
 CREATE TABLE Event(
@@ -21,6 +23,3 @@ CREATE TABLE Event(
 CONSTRAINT Event_FK1 FOREIGN KEY (UserID) REFERENCES User(UserID),
 CONSTRAINT Event_FK2 FOREIGN KEY (CategoryID) REFERENCES Category(CategoryID) ON DELETE CASCADE ON UPDATE CASCADE
 );
-
-INSERT INTO Category VALUES (1, 'Assignment');
-INSERT INTO Category VALUES (2, 'Quiz');

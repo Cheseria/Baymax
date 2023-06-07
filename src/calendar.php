@@ -5,6 +5,7 @@ class Calendar {
 
     private $active_year, $active_month, $active_day;
     private $events = []; // Initialize Event Variable
+    private $categories = []; // Initialize Category Variable
 
     // Build innitial Calendar
     public function __construct($date = null) {
@@ -35,6 +36,31 @@ class Calendar {
     // Add The Events to be Generated in The Calendar 
     public function add_event($txt, $date, $days = 1, $CategoryID) {
         $this->events[] = [$txt, $date, $days, $CategoryID];
+    }
+
+        // Query Events From Database
+        public function get_category_from_databases(){
+            global $connection;
+    
+            $sql = "SELECT * FROM Category";
+            $result =  $connection->query($sql);
+            $rows = mysqli_num_rows($result);
+    
+            if ($rows > 0) {
+                // Loop Through The Rows and Add The Events to The Calendar
+                while ($row = $result->fetch_assoc()) {
+                    $CategoryName = $row['CategoryName'];
+                    $CategoryID = $row['CategoryID'];
+    
+                    // Add The Event to The Calendar
+                    $this->add_category($CategoryName, $CategoryID);
+                }
+            }
+        }
+
+    // Add The Categories to be Generated in The Calendar 
+    public function add_category($name, $CategoryID) {
+        $this->categories[] = [$name, $CategoryID];
     }
 
     // Create Calendar
@@ -98,23 +124,39 @@ class Calendar {
 
         $html .= '<div class="categories-container">';
         // Query the Categories
-        $categoryQuery = "SELECT * FROM category";
-        $categoryResult = $connection->query($categoryQuery);
         $html .= 'Category <br>';
 
         // Show All Saved Category
-        if ($categoryResult && mysqli_num_rows($categoryResult) > 0) {
-            while ($row = mysqli_fetch_assoc($categoryResult)) {
-              $categoryName = $row['CategoryName'];
-              $categoryId = $row['CategoryID'];
+        if($this->categories!= NULL){
+        foreach ($this->categories as $category) {
+              $categoryName = $category[0];
+              $categoryId = $category[1];
               $html .= '<div class="element category">';
               $html .= " $categoryName ";
               $html .= '<div class="dots category-' . $categoryId . '">';
               $html .= '</div>';
               $html .= '<button class="delete-category" data-category-id="' . $categoryId . '">Delete</button>';
               $html .= '</div>';
+        } 
+    }
+
+        $UserID = $_SESSION['UserID'];
+        $categoryQuery = "SELECT * FROM category WHERE UserID='$UserID'";
+        $categoryResult = $connection->query($categoryQuery);    
+
+        if ($categoryResult && mysqli_num_rows($categoryResult) > 0) {
+          while ($row = mysqli_fetch_assoc($categoryResult)) {
+            $categoryName = $row['CategoryName'];
+            $categoryId = $row['CategoryID'];
+            $html .= '<div class="element category">';
+            $html .= " $categoryName ";
+            $html .= '<div class="dots category-' . $categoryId . '">';
+            $html .= '</div>';
+            $html .= '<button class="delete-category" data-category-id="' . $categoryId . '">Delete</button>';
+            $html .= '</div>';
             }
         }
+        
         $html .= '<button class="add-button" id="add-category-button">+</button>';
         $html .= '</div>';
         $html .= '</div>';

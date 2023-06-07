@@ -15,8 +15,12 @@ $calendar = new Calendar($currentdate);
 
 $UserID = $_SESSION['UserID'];
 $sql = "SELECT * FROM event WHERE UserID = $UserID";
+$sqlc = "SELECT * FROM category WHERE UserID = $UserID";
+
 $result =  $connection->query($sql);
+$resultc =  $connection->query($sqlc);
 $rows = mysqli_num_rows($result);
+$rowsc = mysqli_num_rows($resultc);
 
 if ($rows > 0) {
 	// Loop through the rows and add the events to the calendar
@@ -27,6 +31,16 @@ if ($rows > 0) {
 
 		// Add the event to the calendar
 		$calendar->add_event($EventName, $EventDate, 1, $CategoryID);
+	}
+}
+if ($rowsc > 0) {
+	// Loop through the rows and add the categories to the calendar
+	while ($row = $result->fetch_assoc()) {
+		$CategoryName = $row['CategoryName'];
+		$CategoryID = $row['CategoryID'];
+
+		// Add the event to the calendar
+		$calendar->add_category($CategoryName, $CategoryID);
 	}
 }
 ?>

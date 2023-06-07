@@ -8,13 +8,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if (isset($_POST['CategoryName'])) {
                 $Category = $_POST['CategoryName'];
         }
-
-        $sql1 = "INSERT INTO Category (CategoryName) VALUES (?);";
-
-        $stmt = $connection->prepare($sql1);
-        $stmt->bind_param('s', $Category);
-
-        $result = $stmt->execute();
+        if(isset($_SESSION['UserID'])){
+            $UserID = $_SESSION['UserID'];
+            $sql1 = "INSERT INTO Category (CategoryName, UserID) VALUES (?,?);";
+            $stmt = $connection->prepare($sql1);
+            $stmt->bind_param('si', $Category, $UserID);
+            
+            $result = $stmt->execute();
+            
+            echo '<script>window.location.href = "index.php";</script>';
 
         // Generate CSS rules
         header('Content-Type: text/css');
@@ -43,5 +45,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $file = fopen('css/dynamic_styles.css', 'w');
         fwrite($file, $cssContent);
         fclose($file);
+    }
 }
 ?>

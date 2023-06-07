@@ -1,10 +1,12 @@
 <?php
 include "config.php";
+session_start();
+$UserID = $_SESSION['UserID'];
 // Retrieve the selected date from the query parameter
 $selectedDate = $_GET['selected_date'];
 
 // Connect to the database and execute the query to fetch events for the selected date
-$query = "SELECT * FROM event WHERE EventDate = '$selectedDate'";
+$query = "SELECT * FROM event WHERE EventDate = '$selectedDate' AND UserID = '$UserID'";
 $result = mysqli_query($connection, $query);
 
 
