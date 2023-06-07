@@ -44,10 +44,10 @@ if ($rows > 0) {
 		
 	</head>
 	<body> 
-        <div class='head'>
+        <div class='navtop'>
             <h1>Welcome, <?php echo $_SESSION['username'];?>!</h1>
 
-			<button onclick="window.location.href = 'src/logout.php';">Logout</button>
+			<button onclick="window.location.href = 'src/logout.php';" style="margin-left:10px">Logout</button>
         </div>
 		
 		<div class="content home">	
