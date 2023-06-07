@@ -100,7 +100,7 @@ class Calendar {
         // Query the Categories
         $categoryQuery = "SELECT * FROM category";
         $categoryResult = $connection->query($categoryQuery);
-        $html .= 'Category';
+        $html .= 'Category <br>';
 
         // Show All Saved Category
         if ($categoryResult && mysqli_num_rows($categoryResult) > 0) {
@@ -115,7 +115,7 @@ class Calendar {
               $html .= '</div>';
             }
         }
-        $html .= '<button id="add-category-button">+</button>';
+        $html .= '<button class="add-button" id="add-category-button">+</button>';
         $html .= '</div>';
         $html .= '</div>';
 
