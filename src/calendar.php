@@ -107,11 +107,11 @@ class Calendar {
             while ($row = mysqli_fetch_assoc($categoryResult)) {
               $categoryName = $row['CategoryName'];
               $categoryId = $row['CategoryID'];
-              $html .= '<div class="element">';
+              $html .= '<div class="element category">';
               $html .= " $categoryName ";
               $html .= '<div class="dots category-' . $categoryId . '">';
-              $html .= '<button class="delete-category" data-category-id="' . $categoryId . '">Delete</button>';
               $html .= '</div>';
+              $html .= '<button class="delete-category" data-category-id="' . $categoryId . '">Delete</button>';
               $html .= '</div>';
             }
         }
