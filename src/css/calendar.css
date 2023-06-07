@@ -2,7 +2,6 @@
     display: flex;
     background-color: white;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-    border-radius: 5%;
 }
 
 .calendar .header {
@@ -12,7 +11,7 @@
     background-color: skyblue;
 }
 .calendar .header .container {
-    padding-top: 10px;
+    padding-top: 20px;
 }
 
 .calendar .header .custom {
@@ -42,6 +41,7 @@ input[type="text"]{
 .calendar .header .eventElement{
     display: flex;
     flex-direction: column;
+    padding-top: 10px;
 }
 
 .calendar .header .eventHeader{
@@ -83,6 +83,14 @@ input[type="text"]{
     align-items: center;
     justify-content: space-between;
     padding: 0 20%;
+}
+
+.calendar .header .element:hover{
+    background-color: #fff;
+}
+
+.calendar .header .category{
+    cursor: pointer;
 }
 
 .add-button {
@@ -146,7 +154,9 @@ background-color: #cc0000;
     display: flex;
     flex-flow: wrap;
     text-align: center;
+    margin: 10px;
 }
+
 .calendar .days .day_name {
     width: calc(100% / 7);
     text-transform: uppercase;
@@ -171,7 +181,7 @@ background-color: #cc0000;
 }
 
 .calendar .days .day_num:hover {
-    background-color: beige;
+    background-color: linen;
     cursor: pointer;
 }
 
@@ -181,7 +191,7 @@ background-color: #cc0000;
     justify-content: center;
     align-items: center;
     text-align: center;
-    width: fit-content;
+    width: 40px;
     vertical-align: middle;
     padding: 10px;
     font-size: 20px;
@@ -197,7 +207,7 @@ background-color: #cc0000;
 }
 
 .calendar .days span:hover {
-    background-color: #437ada;
+    background-color: ivory;
     border-radius: 100%;
 
 }
