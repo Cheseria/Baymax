@@ -42,11 +42,11 @@ The main goal of this project is to allow users to properly organise and schedul
 2. The user will then be sent to the calendar page, with the active month calendar displayed on the screen, and the current date circled in the date number.
 ### Change Calendar View :
 3. To change the calendar month and year, simply click on the name of the month on the left side of the calendar and choose the desired month. To change the year, user have to typed in the year they want to see.
-### Adding Event & Category
+### Adding Event & Category :
 4. Before adding any events to the calendar, User must first add category by clicking the + button on the left side of the calendar display. Type in the name for the category and hit enter with your keyboard.
 5. Next, if the user wishes to add an event, they can clicked on the date number they desire and a pop up form will show up and user need to fill in the name of the event, category which the event belongs to. additionally, you can also specified the time and the description for the event in their respective text field.
 6. The Event name then later will show up in the calendar, with the background color of the category linked.
 7. By Clicking the Square area of each date, it will show all the events listed on each date. If there is no Event "No Event" will be printed on the left side, otherwise, it will show the list of event on that date. To see the details of the event, Click the name of the event you want to see, and the information will be shown below the name of the event alongside a delete button.
-### Deleting Event & Category
+### Deleting Event & Category :
 8. To delete event, simply press the delete button within the same area of the name of the event.
 9. To delete category (make sure there is no event registered), then click on the name of the category on the lower left side of the calendar, a delete button will be shown. Simply tap it to delete category.
